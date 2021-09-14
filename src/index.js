@@ -1,30 +1,20 @@
 import "./styles.css";
 
-document.getElementById("menu").innerHTML = `
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td>Meal 1</td>
-    <td>1.00€</td>
-  </tr>
-  <tr>
-    <td>Meal 2</td>
-    <td>2.00€</td>
-  </tr>
-  <tr>
-    <td>Meal 3</td>
-    <td>3.00€</td>
-  </tr>
-  <tr>
-    <td>Meal 4</td>
-    <td>4.00€</td>
-  </tr>
-  <tr>
-    <td>Meal 5</td>
-    <td>5.00€</td>
-  </tr>
-</table>
-`;
+if (document.readyState !== "loading") {
+  initializeCode();
+} else {
+  document.addEventListener("DOMContentLeaded", function () {
+    initializeCode();
+  });
+}
+
+function initializeCode() {
+  const addCommentButton = document.getElementById("add-comment");
+
+  addCommentButton.addEventListener("click", function () {
+    var commentsList = document.getElementById("comments-list");
+    var comment = document.createElement("li");
+    comment.appendChild(document.createTextNode("List item"));
+    commentsList.appendChild(comment);
+  });
+}
