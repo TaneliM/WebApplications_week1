@@ -14,7 +14,9 @@ function initializeCode() {
   addCommentButton.addEventListener("click", function () {
     var commentsList = document.getElementById("comments-list");
     var comment = document.createElement("li");
-    comment.appendChild(document.createTextNode("List item"));
+    comment.appendChild(
+      document.createTextNode(document.getElementById("new-comment").value)
+    );
     commentsList.appendChild(comment);
   });
 }
